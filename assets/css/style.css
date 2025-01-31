@@ -166,6 +166,7 @@ h2 {
         display: inline;
     }
 }
+
 /* Large devices (small laptops, 992px and up) */
 @media screen and (min-width: 992px) {
     /* Makes all service cards the same height for consistency */
