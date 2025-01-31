@@ -9,7 +9,7 @@
     --secondary-color: #aa9581; /* light brown */
     --highlight-color: #416a8e; /* blue */
     --light-highlight-color: #7a9fc2; /* light blue */
- }
+}
 
 /* Global Styles */
 body {
@@ -79,18 +79,21 @@ h2 {
     #services .card-body {
         min-height: 191px;
     }
+}
 /* Large devices (small laptops, 992px and up) */
 @media screen and (min-width: 992px) {
     /* Makes all service cards the same height for consistency */
     #services .card-body {
         min-height: auto;
     }
+}
 /* XL devices (desktops, 1200px and up) */
 @media screen and (min-width: 1200px) {
     /* Makes all service cards the same height for consistency */
     #services .card-body {
         min-height: 220px;
     }
+}
 /* XXL devices (large desktops, 1400px and up) */
 @media screen and (min-width: 1400px) {
     /* Makes all service cards the same height for consistency */
