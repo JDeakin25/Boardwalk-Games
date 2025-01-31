@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Macondo&display=swap');
 
 /* CSS Variables */
-
  :root {
     --primary-font: "Inter", sans-serif;
     --secondary-font: "Macondo", cursive;
@@ -13,16 +12,21 @@
  }
 
 /* Global Styles */
-
 body {
     font-family: var(--primary-font);
 }
 h1,
-h1,
+h2,
 h3 {
     font-family: var(--secondary-font);
     color: var(--primary-color);
+}
+h1,
+h2 {
     text-transform: uppercase;
+}
+h2 {
+    margin-bottom: 2rem;
 }
 .sub-heading-color {
     color: var(--highlight-color);
@@ -33,7 +37,6 @@ h3 {
 }
 
 /* Navbar */
-
 #navbar {
     background-color: var(--primary-color);
 }
@@ -42,9 +45,18 @@ h3 {
 }
 
 /* Header */
-
 #header .lead {
     font-family: var(--secondary-font);
+}
+
+/* Services */
+#services .card-footer {
+    font-weight: bold;
+    color: var(--highlight-color);
+    background-color: transparent;
+}
+#services .card {
+    margin-bottom: 1.5rem;
 }
 
 /* Grid visualisation CSS for testing */
@@ -58,3 +70,11 @@ h3 {
     border: 2px solid white;
     background-color: lightgray;
 } */
+
+/* Media Queries */
+
+/* Medium devices (tablets, 768px and up) */
+
+@media screen and (min-width: 768px) {
+    
+}
