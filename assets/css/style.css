@@ -14,23 +14,29 @@
 /* Global Styles */
 body {
     font-family: var(--primary-font);
+    padding-top: 58.05px; /* Pushes top of header down under fixed navbar */
 }
+
 h1,
 h2,
 h3 {
     font-family: var(--secondary-font);
     color: var(--primary-color);
 }
+
 h1,
 h2 {
     text-transform: uppercase;
 }
+
 h2 {
     margin-bottom: 2rem;
 }
+
 .sub-heading-color {
     color: var(--highlight-color);
 }
+
 .section {
     margin-top: 2rem;
     margin-bottom: 2rem;
@@ -72,6 +78,7 @@ h2 {
 #navbar {
     background-color: var(--primary-color);
 }
+
 #navbar .logo {
     width: 30px;
 }
@@ -87,6 +94,7 @@ h2 {
     color: var(--highlight-color);
     background-color: transparent;
 }
+
 #services .card {
     margin-bottom: 1.5rem;
 }
