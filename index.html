@@ -38,10 +38,12 @@
 
   <!-- Classes on body set to work with mt-auto on footer to ensure it always stays at the bottom of the page -->
   <body class="d-flex flex-column min-vh-100">
-    <!-- Navigation -->
     <!-- data-bs-theme ensures font colour contrasts dark navbar background color -->
-    <nav id="navbar" class="navbar navbar-expand-lg fixed-top" data-bs-theme="dark">
-      <!-- Container (not fluid) class used to ensure container margin consistent with grid -->
+    <!-- Navigation -->
+    <nav
+      id="navbar"
+      class="navbar navbar-expand-lg fixed-top"
+      data-bs-theme="dark">
       <div class="container">
         <a class="navbar-brand" href="index.html">
           <img
@@ -60,31 +62,25 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <!-- Ms-auto class used to ensure auto margin on the left, pushing links to the right -->
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html"
-                >Home</a>
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.html#services">Services</a>
+              <a class="nav-link" href="#services">Services</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.html#events">Events</a>
+              <a href="#events" class="nav-link">Events</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="game-library.html">Games</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.html#contact">Contact</a>
+              <a class="nav-link" href="#contact">Contact</a>
             </li>
             <li class="nav-item">
-              <a
-                id="nav-button"
-                href="booking.html"
-                class="btn custom-button-filled ms-lg-3">
-                Book now
-              </a>
+              <a href="booking.html" class="btn custom-button-filled ms-lg-3"
+                >Book now</a>
             </li>
           </ul>
         </div>
@@ -107,12 +103,16 @@
             affordable hangout, we've got you covered.
           </p>
           <a href="booking.html" class="btn custom-button-outline mb-4"
-            >Book now</a>
+            >Book now</a
+          >
         </div>
 
         <div class="col-12 col-xl-6">
           <!-- Carousel -->
-          <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+          <div
+            id="carouselExampleAutoplaying"
+            class="carousel slide"
+            data-bs-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <img
@@ -151,12 +151,24 @@
                   alt="Students playing a card game at Boardwalk Games" />
               </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExampleAutoplaying"
+              data-bs-slide="prev">
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"></span>
               <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselExampleAutoplaying"
+              data-bs-slide="next">
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"></span>
               <span class="visually-hidden">Next</span>
             </button>
           </div>
@@ -305,7 +317,8 @@
             </table>
             <div class="text-center mb-2">
               <span class="student-discount"
-                >*Get 20% off with valid student ID</span>
+                >*Get 20% off with valid student ID</span
+              >
             </div>
           </div>
           <div class="col-12 text-center">
@@ -347,19 +360,22 @@
                 target="_blank"
                 aria-label="Visit our Instagram page (opens in a new tab)"
                 rel="noopener">
-                <i class="fa-brands fa-instagram"></i></a>
+                <i class="fa-brands fa-instagram"></i
+              ></a>
               <a
                 href="https://facebook.com"
                 target="_blank"
                 aria-label="Visit our Facebook page (opens in a new tab)"
                 rel="noopener">
-                <i class="fa-brands fa-square-facebook"></i></a>
+                <i class="fa-brands fa-square-facebook"></i
+              ></a>
               <a
                 href="https://x.com"
                 target="_blank"
                 aria-label="Visit our X feed (opens in a new tab)"
                 rel="noopener">
-                <i class="fa-brands fa-x-twitter"></i></a>
+                <i class="fa-brands fa-x-twitter"></i
+              ></a>
             </div>
           </div>
           <!-- opening times -->
@@ -412,5 +428,28 @@
     <script
       src="https://kit.fontawesome.com/63abbdb951.js"
       crossorigin="anonymous"></script>
+
+    <!-- JavaScript code to ensure the Bootstrap mobile navbar collapses when navigating to in-page links -->
+    <script>
+      document
+        .querySelectorAll(".navbar-collapse .nav-link")
+        .forEach((link) => {
+          link.addEventListener("click", function (e) {
+            let section = document.querySelector(e.target.getAttribute("href"));
+            if (section) {
+              e.preventDefault(); // Prevent default anchor click behavior
+              let navbarHeight =
+                document.querySelector(".navbar-toggler").offsetHeight;
+              window.scroll({
+                top: section.offsetTop - navbarHeight, // Adjust for navbar height
+                behavior: "smooth",
+              });
+              document
+                .querySelector(".navbar-collapse")
+                .classList.remove("show"); // Collapse navbar
+            }
+          });
+        });
+    </script>
   </body>
 </html>
